@@ -1,6 +1,6 @@
 package com.example.RajaArcenio.ui.screen
-import com.example.RajaArcenio.R
 
+import com.example.RajaArcenio.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,13 +33,11 @@ fun BasicInfoScreen(onNavigateToContact: () -> Unit) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues) // Mencegah UI tertimpa status bar/navigation bar
+                .padding(paddingValues)
                 .padding(all = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Menggantikan Box dengan Image (Logo Aplikasi)
             Image(
-                // PERHATIAN: Lihat catatan di bawah terkait R.mipmap
                 painter = painterResource(id = R.mipmap.ic_launcher_foreground),
                 contentDescription = "Logo Aplikasi",
                 modifier = Modifier.size(120.dp)
@@ -63,7 +61,6 @@ fun BasicInfoScreen(onNavigateToContact: () -> Unit) {
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Mengubah Row sebelumnya menjadi Card agar lebih rapi
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
@@ -89,11 +86,8 @@ fun BasicInfoScreen(onNavigateToContact: () -> Unit) {
                 }
             }
 
-            // Spacer dengan weight(1f) berfungsi sebagai "pegas"
-            // untuk mendorong tombol Hubungi Kami ke bagian paling bawah layar
             Spacer(modifier = Modifier.weight(1f))
 
-            // Tombol Navigasi
             Button(
                 onClick = onNavigateToContact,
                 modifier = Modifier
